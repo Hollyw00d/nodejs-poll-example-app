@@ -1,0 +1,30 @@
+{
+  "name": "nodejs-poll-example-app",
+  "version": "0.0.1",
+  "description": "Node.js poll example app that uses Handlebars and MongoDB",
+  "main": "server.js",
+  "scripts": {
+    "test": "node server.js",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Hollyw00d/nodejs-poll-example-app.git"
+  },
+  "keywords": [
+    "Node.js",
+    "MongoDB",
+    "Handlebars",
+    "Express"
+  ],
+  "author": "Matt Jennings",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Hollyw00d/nodejs-poll-example-app/issues"
+  },
+  "homepage": "https://github.com/Hollyw00d/nodejs-poll-example-app#readme",
+  "dependencies": {
+    "express": "^4.13.4",
+    "nodemon": "^1.9.2"
+  }
+}
