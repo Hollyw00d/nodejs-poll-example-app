@@ -29,6 +29,10 @@ app.get('/', function(req, res) {
     res.render('home');
 });
 
+app.get('/tester', function(req, res) {
+    res.render('tester');
+});
+
 
 // Set up a static folder for files that don't change,
 // like CSS and images and for example 
