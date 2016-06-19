@@ -23,15 +23,11 @@ app.get("/", function(req, res) {
     res.send("Hello World!");              
 });
 
-// Sass set up with Express
-app.use(sassMiddleware({
-    src: __dirname + "/sass",
-    dest: path.join(__dirname, 'public'),
-    debug: true,
-    
-}));
 
-// Set up a static folder for files like CSS
+// Set up a static folder for files that don't change,
+// like CSS and images and for example 
+// if "hello.html" is inside this "public" directory then
+// it this file will be viewable at "/static/hello.html"
 app.use("/static", express.static("public"));
 
 // For Cloud 9 I must use port 5000 (see below)
