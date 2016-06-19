@@ -8,9 +8,9 @@ var exphbs = require('express-handlebars');
 // An instance of the express app
 var app = express();
 
-// Tell express to use handlebars as it's 
-// templating engine
-app.engine('handlebars', exphbs({defaultLayout: 'base'}));
+// Tell express to use handlebars as it's templating engine
+// and look in a directory called "views" for all the templates
+app.engine('handlebars', exphbs());
 app.set('view engine', 'handlebars');
 
 // Define a route inside express,
@@ -18,10 +18,14 @@ app.set('view engine', 'handlebars');
 // in the callback function 
 // "req" refers to a request object and
 // "res" refers to a response object
-app.get("/", function(req, res) {
+app.get('/', function(req, res) {
     // Below prints "Hello World!" on screen 
     // when I go to "/" relative path on website
-    res.send("Hello World!");              
+    // res.send('Hello World!');    
+    
+    // Tells Express to look for a 
+    // "home.handlebars" template inside "base" directory
+    res.render('home');
 });
 
 
@@ -29,7 +33,7 @@ app.get("/", function(req, res) {
 // like CSS and images and for example 
 // if "hello.html" is inside this "public" directory then
 // it this file will be viewable at "/static/hello.html"
-app.use("/static", express.static("public"));
+app.use('/static', express.static('public'));
 
 // For Cloud 9 I must use port 5000 (see below)
 // and for other apps the port is usually 80
