@@ -9,8 +9,9 @@ var exphbs = require('express-handlebars');
 var app = express();
 
 // Tell express to use handlebars as it's templating engine
-// and look in a directory called "views" for all the templates
-app.engine('handlebars', exphbs());
+// and look for a file called "views/layouts/base.handlebars" for
+// the master layouts and then other files inside "views"
+app.engine('handlebars', exphbs({defaultLayout: 'base'}));
 app.set('view engine', 'handlebars');
 
 // Define a route inside express,
