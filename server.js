@@ -5,13 +5,6 @@ var express = require('express');
 // An instance of the express app
 var app = express();
 
-// An install of the Node Sass Middleware module
-var sassMiddleware = require('node-sass-middleware');
-
-// path module provides utilities for 
-// working with file and directory paths
-var path = require('path');
-
 // Define a route inside express,
 // "get" refers to an HTTP method,
 // in the callback function 
