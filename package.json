@@ -25,6 +25,7 @@
   "homepage": "https://github.com/Hollyw00d/nodejs-poll-example-app#readme",
   "dependencies": {
     "express": "^4.13.4",
+    "express-handlebars": "^3.0.0",
     "nodemon": "^1.9.2"
   }
 }
