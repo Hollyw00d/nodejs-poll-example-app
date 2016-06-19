@@ -2,8 +2,16 @@
 // "require" loads an additional library
 var express = require('express');
 
+// Express handlebars module
+var exphbs = require('express-handlebars');
+
 // An instance of the express app
 var app = express();
+
+// Tell express to use handlebars as it's 
+// templating engine
+app.engine('handlebars', exphbs({defaultLayout: 'base'}));
+app.set('view engine', 'handlebars');
 
 // Define a route inside express,
 // "get" refers to an HTTP method,
