@@ -14,6 +14,20 @@ var app = express();
 app.engine('handlebars', exphbs({defaultLayout: 'base'}));
 app.set('view engine', 'handlebars');
 
+// "polls" variable represents the model as there is no database yet
+var polls = [
+    {
+        id:     1,
+        name:   "Will the Warriors win the NBA championship?",
+        is_featured: true
+    }, 
+    {
+        id:     2,
+        name:   "Will Trump win the GOP nomination?",
+        is_featured: false
+    }
+];
+
 // Define a route inside express,
 // "get" refers to an HTTP method,
 // in the callback function 
@@ -27,7 +41,8 @@ app.get('/', function(req, res) {
     // Tells Express to look for a 
     // "home.handlebars" template inside "base" directory
     res.render('home', {
-        polls: ["Will the Warriors win the NBA championship?", "Will Trump win the GOP nomination?"]
+        //show_polls: polls 
+        show_polls: polls
     });
 });
 
