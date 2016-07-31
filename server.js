@@ -26,7 +26,9 @@ app.get('/', function(req, res) {
     
     // Tells Express to look for a 
     // "home.handlebars" template inside "base" directory
-    res.render('home');
+    res.render('home', {
+        polls: ["Will the Warriors win the NBA championship?", "Will Trump win the GOP nomination?"]
+    });
 });
 
 app.get('/tester', function(req, res) {
