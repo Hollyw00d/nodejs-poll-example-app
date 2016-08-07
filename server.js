@@ -15,6 +15,7 @@ app.engine('handlebars', exphbs({defaultLayout: 'base'}));
 app.set('view engine', 'handlebars');
 
 // "polls" variable represents the model as there is no database yet
+// and is an array of objects
 var polls = [
     {
         id:     1,
