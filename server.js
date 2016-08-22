@@ -47,6 +47,13 @@ app.get('/', function(req, res) {
     });
 });
 
+// Route for each poll
+app.get('/polls/:poll_id', function(req, res) {
+    var get_poll_id = req.params.poll_id;
+    console.log(get_poll_id);
+    res.send(get_poll_id);
+});
+
 app.get('/tester', function(req, res) {
     // Below I'm passing in a JSON object (or hash table of keys and values, which is similar to an associative array) 
     // as a 2nd parameter to the "tester.handlebars" template
