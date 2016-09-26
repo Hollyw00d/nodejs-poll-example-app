@@ -6,18 +6,18 @@ or isn't assigned to an eempty value
 --}}
 {{#if show_polls}}
 <ul>
-    {{!-- 
-    In code below "each" interates over the "polls" property and 
-    "this.name" refers to the property inside the array of objects
-    --}}
-    {{#each show_polls}}
-        <li>{{this.name}}</li>
-    {{/each}}
+  {{!-- 
+  In code below "each" interates over the "polls" property and 
+  "this.name" refers to the property inside the array of objects
+  --}}
+  {{#each show_polls}}
+      <li>{{this.name}}</li>
+  {{/each}}
 </ul>
 {{!-- 
 Else startment runs if DOESN'T variable exist
 or IS assigned to an eempty value 
 --}}
 {{else}}
-    <p><em>There are currently no polls.</em></p>
+  <p><em>There are currently no polls.</em></p>
 {{/if}}

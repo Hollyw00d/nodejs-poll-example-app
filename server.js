@@ -17,16 +17,16 @@ app.set('view engine', 'handlebars');
 // "polls" variable represents the model as there is no database yet
 // and is an array of objects
 var polls = [
-    {
-        id:     1,
-        name:   "Will the Warriors win the NBA championship?",
-        is_featured: true
-    }, 
-    {
-        id:     2,
-        name:   "Will Trump win the GOP nomination?",
-        is_featured: false
-    }
+  {
+    id:     1,
+    name:   "Will the Warriors win the NBA championship?",
+    is_featured: true
+  }, 
+  {
+    id:     2,
+    name:   "Will Trump win the GOP nomination?",
+    is_featured: false
+  }
 ];
 
 // Define a route inside express,
@@ -35,34 +35,37 @@ var polls = [
 // "req" refers to a request object and
 // "res" refers to a response object
 app.get('/', function(req, res) {
-    // Below prints "Hello World!" on screen 
-    // when I go to "/" relative path on website
-    // res.send('Hello World!');    
-    
-    // Tells Express to look for a 
-    // "home.handlebars" template inside "base" directory
-    res.render('home', {
-        //show_polls: polls 
-        show_polls: polls
-    });
+  // Below prints "Hello World!" on screen 
+  // when I go to "/" relative path on website
+  // res.send('Hello World!');    
+  
+  // Tells Express to look for a 
+  // "home.handlebars" template inside "base" directory
+  res.render('home', {
+    //show_polls: polls 
+    show_polls: polls
+  });
 });
 
 // Route for each poll
+// and ":poll_id" is a URL parameter where a value passed the to URL, 
+// like "example.com/polls/1234" is passed in as the "req.params.poll_id" value
+// below
 app.get('/polls/:poll_id', function(req, res) {
-    var get_poll_id = req.params.poll_id;
-    console.log(get_poll_id);
-    res.send(get_poll_id);
+  var get_poll_id = req.params.poll_id;
+  console.log(get_poll_id);
+  res.send(get_poll_id);
 });
 
 app.get('/tester', function(req, res) {
-    // Below I'm passing in a JSON object (or hash table of keys and values, which is similar to an associative array) 
-    // as a 2nd parameter to the "tester.handlebars" template
-    res.render('tester', {
-        first_name: "Donald",
-        last_name: "Duck",
-        now: new Date(),
-        random_num: Math.round(Math.random() * 10)
-    });
+  // Below I'm passing in a JSON object (or hash table of keys and values, which is similar to an associative array) 
+  // as a 2nd parameter to the "tester.handlebars" template
+  res.render('tester', {
+    first_name: "Donald",
+    last_name: "Duck",
+    now: new Date(),
+    random_num: Math.round(Math.random() * 10)
+  });
 });
 
 
