@@ -47,6 +47,16 @@ app.get('/', function(req, res) {
   });
 });
 
+function loadPollById(myChosenPoll) {
+  for( var i = 0; i < polls.length; i++ ) {
+    var pollIterator = polls[i];
+    if( polls.id == myChosenPoll ) {
+      return pollIterator;
+    }
+  }
+  
+}
+
 // Route for each poll
 // and ":poll_id" is a URL parameter where a value passed the to URL, 
 // like "example.com/polls/1234" is passed in as the "req.params.poll_id" value
@@ -54,12 +64,14 @@ app.get('/', function(req, res) {
 app.get('/polls/:poll_id', function(req, res) {
   var myPollId = req.params.poll_id;
   
+  var data = loadPollById(myPollId);
+  
   var myPoll = {
     id: myPollId,
     name: 'sample poll'
   };
   
-  res.render('viewPoll', myPoll);
+  res.render('viewPoll', data);
 });
 
 app.get('/tester', function(req, res) {
