@@ -16,7 +16,7 @@ app.set('view engine', 'handlebars');
 
 // "polls" variable represents the model as there is no database yet
 // and is an array of objects
-var polls = [
+var myPolls = [
   {
     id:     1,
     name:   "Will the Warriors win the NBA championship?",
@@ -43,18 +43,18 @@ app.get('/', function(req, res) {
   // "home.handlebars" template inside "base" directory
   res.render('home', {
     //show_polls: polls 
-    show_polls: polls
+    show_polls: myPolls
   });
 });
 
-function loadPollById(myChosenPoll) {
-  for( var i = 0; i < polls.length; i++ ) {
-    var pollIterator = polls[i];
-    if( polls.id == myChosenPoll ) {
-      return pollIterator;
+function loadPollById(poll_id) {
+  for( var i = 0; i < myPolls.length; i++) {
+    var getPoll = myPolls[i];
+    if( getPoll.id == poll_id ) {
+      return getPoll;
     }
+    
   }
-  
 }
 
 // Route for each poll
@@ -65,11 +65,6 @@ app.get('/polls/:poll_id', function(req, res) {
   var myPollId = req.params.poll_id;
   
   var data = loadPollById(myPollId);
-  
-  var myPoll = {
-    id: myPollId,
-    name: 'sample poll'
-  };
   
   res.render('viewPoll', data);
 });
