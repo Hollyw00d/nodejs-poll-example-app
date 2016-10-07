@@ -47,10 +47,10 @@ app.get('/', function(req, res) {
   });
 });
 
-function loadPollById(poll_id) {
+function loadPollById(chosenPollId) {
   for( var i = 0; i < myPolls.length; i++) {
     var getPoll = myPolls[i];
-    if( getPoll.id == poll_id ) {
+    if( getPoll.id == chosenPollId ) {
       return getPoll;
     }
     
