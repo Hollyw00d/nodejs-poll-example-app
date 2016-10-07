@@ -52,9 +52,12 @@ app.get('/', function(req, res) {
 // like "example.com/polls/1234" is passed in as the "req.params.poll_id" value
 // below
 app.get('/polls/:poll_id', function(req, res) {
-  var get_poll_id = req.params.poll_id;
-  console.log(get_poll_id);
-  res.send(get_poll_id);
+  var myPoll = {
+    id: 1234,
+    name: 'sample poll'
+  };
+  
+  res.render('viewPoll', myPoll);
 });
 
 app.get('/tester', function(req, res) {
