@@ -52,8 +52,10 @@ app.get('/', function(req, res) {
 // like "example.com/polls/1234" is passed in as the "req.params.poll_id" value
 // below
 app.get('/polls/:poll_id', function(req, res) {
+  var myPollId = req.params.poll_id;
+  
   var myPoll = {
-    id: 1234,
+    id: myPollId,
     name: 'sample poll'
   };
   
