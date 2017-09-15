@@ -96,3 +96,4 @@ var port = Number(process.env.PORT || 5000);
 
 // app listens to traffic on port 5000
 app.listen(port);
+console.log('blah');
