@@ -11,7 +11,7 @@ or isn't assigned to an eempty value
   "this.name" refers to the property inside the array of objects
   --}}
   {{#each show_polls}}
-      <li>{{this.name}}</li>
+      <li><a href="/polls/{{id}}">{{this.name}}</a></li>
   {{/each}}
 </ul>
 {{!-- 

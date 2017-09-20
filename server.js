@@ -20,12 +20,12 @@ var myPolls = [
   {
     id:     1,
     name:   "Will the Warriors win the NBA championship?",
-    is_featured: true
+    image_url: "http://dehayf5mhw1h7.cloudfront.net/wp-content/uploads/sites/27/2016/10/07193054/warriors-300x300.png"
   }, 
   {
     id:     2,
     name:   "Will Trump win the GOP nomination?",
-    is_featured: false
+    image_url: "https://fm.cnbc.com/applications/cnbc.com/resources/img/editorial/2017/05/12/104466932-PE_Color.240x240.jpg"
   }
 ];
 
